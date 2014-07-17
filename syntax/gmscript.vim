@@ -23,9 +23,9 @@ syn region gmComment start="/\*" end="\*/" contains=gmTodo,@Spell
 
 " strings
 syn match  gmSpecial contained "\\[\\abfnrtv\'\"]\|\\\d\{,3}"
-syn region gmString  start=+'+ end=+'+ skip=+\\\\\|\\'+ contains=@Spell,gmSpecial
-syn region gmString  start=+"+ end=+"+ skip=+\\\\\|\\"+ contains=@Spell,gmSpecial
-syn region gmString  start=+`+ end=+`+ skip=+\\\\\|\\"+ contains=@Spell,gmSpecial
+syn region gmString  start=+'+ end=+'+ skip=+\\\\\|\\'+ contains=gmSpecial,@Spell
+syn region gmString  start=+"+ end=+"+ skip=+\\\\\|\\"+ contains=gmSpecial,@Spell
+syn region gmString  start=+`+ end=+`+ skip=+\\\\\|\\"+ contains=gmSpecial,@Spell
 
 " integer number
 syn match gmNumber "\<\d\+\>"
