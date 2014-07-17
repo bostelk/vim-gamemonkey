@@ -7,7 +7,7 @@ if exists("b:current_syntax")
   finish
 endif
 
-" languge
+" language
 syn keyword gmConditional if else
 syn keyword gmRepeat for foreach in while dowhile
 syn keyword gmStatement break return continue
