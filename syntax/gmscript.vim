@@ -46,7 +46,6 @@ syn keyword gmFunction function
 
 " type functions
 syn keyword gmFunc Int Float String
-syn keyword gmFunc assert print
 
 " thread functions
 syn keyword gmFunc thread yield exit
@@ -58,7 +57,7 @@ syn keyword gmFunc threadAllIds signal block
 syn keyword gmFunc stateSet stateGet stateGetLast stateSetExitFunction
 
 " system functions
-syn keyword gmFunc debug assert sysTime doString
+syn keyword gmFunc debug assert print sysTime doString
 syn keyword gmFunc typeId typeName typeRegisterOperator
 syn keyword gmFunc typeRegisterVariable
 syn keyword gmFunc sysCollectGarbage sysGetMemoryUsage
