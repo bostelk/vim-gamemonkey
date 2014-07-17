@@ -23,12 +23,12 @@ syn region gmComment start="/\*" end="\*/" contains=gmTodo,@Spell
 
 " strings, with double quotes
 syn match  gmSpecialError contained "\\."
-syn match  gmSpecial contained +\\[\\abfnrtv'"]+
-syn region gmString  start=+"+ end=+"+ contains=gmSpecial,gmSpecialError,@Spell
+syn match  gmSpecialChar contained +\\[\\abfnrtv'"]+
+syn region gmString  start=+"+ end=+"+ contains=gmSpecialChar,gmSpecialError,@Spell
 
 " strings, with backdashes
-syn match  gmSpecialOther contained +``+
-syn region gmStringOther  start=+`+ end=+`+ contains=gmSpecialOther,@Spell
+syn match  gmSpecialCharOther contained +``+
+syn region gmStringOther  start=+`+ end=+`+ contains=gmSpecialCharOther,@Spell
 
 " characters
 syn region gmCharacter  start=+'+ end=+'+ contains=@Spell
@@ -95,25 +95,31 @@ syn keyword gmFunc print
 syn keyword gmFunc format
 "syn keyword gmFunc Int Float String
 
-hi def link gmConditional	Conditional
-hi def link gmRepeat		Repeat
-hi def link gmStatement		Statement
-hi def link gmOperator		Operator
-hi def link gmBoolean		Boolean
-hi def link gmConstant		Constant
-hi def link gmIdentifier	Identifier
-hi def link gmTodo			Todo
 hi def link gmComment		Comment
-hi def link gmSpecialError  Error
+hi def link gmTodo			Todo
+
+hi def link gmConstant		Constant
 hi def link gmString		String
 hi def link gmStringOther	String
 hi def link gmCharacter		Character
 hi def link gmNumber		Number
+hi def link gmBoolean		Boolean
 hi def link gmFloat			Float
+
+hi def link gmIdentifier	Identifier
 hi def link gmFunction		Function
+
+hi def link gmStatement		Statement
+hi def link gmConditional	Conditional
+hi def link gmRepeat		Repeat
 hi def link gmOperator		Operator
 
-"hi def link gmFunc			Identifier
+" may, or may not want internal functions
+hi def link gmFunc			Keyword
+
+hi def link gmSpecialChar       SpecialChar
+hi def link gmSpecialCharOther  SpecialChar
+hi def link gmSpecialError      Error
 
 let b:current_syntax = "gmscript"
 
