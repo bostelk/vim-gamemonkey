@@ -40,8 +40,9 @@ syn match gmNumber "\<0[xX]\x\+"
 " binary number
 syn match gmNumber "\<0[bB][01]\+"
 
-" float number, starting with a dot, optional exponent and literal
+" hack...
 syn match gmFloat  "\<\d\+\."
+" float number, starting with a dot, optional exponent and literal
 syn match gmFloat  "\.\d\+\([eE][-+]\=\d\+\)\=[fF]\=\>"
 " float number, with a dot, optional exponent and literal
 syn match gmFloat  "\<\d\+\.\d*\([eE][-+]\=\d\+\)\=[fF]\=\>"
