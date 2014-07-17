@@ -49,34 +49,44 @@ syn keyword gmFunction function
 "syn match gmOperator "\(<\|<=\|>\|>=\|==\|&&\|||\)[?#]\{0,2}" skipwhite nextgroup=gmString
 "syn match gmOperator "=\|[-+]" skipwhite nextgroup=gmString
 
-" type functions
-syn keyword gmFunc Int Float String
-
-" thread functions
-syn keyword gmFunc thread yield exit
-syn keyword gmFunc threadKill threadKillAll
-syn keyword gmFunc sleep threadTime threadId
-syn keyword gmFunc threadAllIds signal block
-
-" state functions
-syn keyword gmFunc stateSet stateGet stateGetLast stateSetExitFunction
-
-" system functions
-syn keyword gmFunc debug assert print sysTime doString
-syn keyword gmFunc typeId typeName typeRegisterOperator
+" internal functions
+syn keyword gmFunc debug
+syn keyword gmFunc typeId
+syn keyword gmFunc typeName
+syn keyword gmFunc typeRegisterOperator
 syn keyword gmFunc typeRegisterVariable
-syn keyword gmFunc sysCollectGarbage sysGetMemoryUsage
+syn keyword gmFunc sysCollectGarbage
+syn keyword gmFunc sysGetMemoryUsage
+syn keyword gmFunc sysGetDesiredMemoryUsageHard
+syn keyword gmFunc sysGetDesiredMemoryUsageSoft
 syn keyword gmFunc sysSetDesiredMemoryUsageHard
 syn keyword gmFunc sysSetDesiredMemoryUsageSoft
 syn keyword gmFunc sysSetDesiredMemoryUsageAuto
-syn keyword gmFunc sysGetDesiredMemoryUsageHard
-syn keyword gmFunc sysGetDesiredMemoryUsageSoft
-syn keyword gmFunc sysGetStatsGCNumFullCollects
-syn keyword gmFunc sysGetStatsGCNumIncCollects
-syn keyword gmFunc sysGetStatsGCNumIncWarnings
-
-" table functions
-syn keyword gmFunc tableCount tableDuplicate
+syn keyword gmFunc sysTime
+syn keyword gmFunc doString
+syn keyword gmFunc globals
+syn keyword gmFunc threadTime
+syn keyword gmFunc threadId
+syn keyword gmFunc threadAllIds
+syn keyword gmFunc threadKill
+syn keyword gmFunc threadKillAll
+syn keyword gmFunc thread
+syn keyword gmFunc yield
+syn keyword gmFunc exit
+syn keyword gmFunc assert
+syn keyword gmFunc sleep
+syn keyword gmFunc signal
+syn keyword gmFunc block
+syn keyword gmFunc stateSet
+syn keyword gmFunc stateSetOnThread
+syn keyword gmFunc stateGet
+syn keyword gmFunc stateGetLast
+syn keyword gmFunc stateSetExitFunction
+syn keyword gmFunc tableCount
+syn keyword gmFunc tableDuplicate
+syn keyword gmFunc print
+syn keyword gmFunc format
+"syn keyword gmFunc Int Float String
 
 hi def link gmConditional	Conditional
 hi def link gmRepeat		Repeat
