@@ -52,10 +52,6 @@ syn match gmFloat  "\<\d\+[eE][-+]\=\d\+\>"
 " functions
 syn keyword gmFunction function
 
-" operators
-"syn match gmOperator "\(<\|<=\|>\|>=\|==\|&&\|||\)[?#]\{0,2}" skipwhite nextgroup=gmString
-"syn match gmOperator "=\|[-+]" skipwhite nextgroup=gmString
-
 " internal functions
 syn keyword gmFunc debug
 syn keyword gmFunc typeId
@@ -112,7 +108,6 @@ hi def link gmFunction		Function
 hi def link gmStatement		Statement
 hi def link gmConditional	Conditional
 hi def link gmRepeat		Repeat
-hi def link gmOperator		Operator
 
 " may, or may not want internal functions
 hi def link gmFunc			Keyword
