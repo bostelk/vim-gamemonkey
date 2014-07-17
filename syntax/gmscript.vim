@@ -14,7 +14,7 @@ syn keyword gmStatement break return continue
 syn keyword gmOperator and or
 syn keyword gmBoolean true false
 syn keyword gmConstant null
-syn keyword gmIdentifier global local member this fork
+syn keyword gmIdentifier global local member this
 
 " comments
 syn keyword gmTodo TODO FIXME XXX NOTE contained
