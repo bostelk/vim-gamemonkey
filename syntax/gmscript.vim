@@ -32,10 +32,13 @@ syn match gmNumber "\<\d\+\>"
 syn match gmNumber "\<0[xX]\x\+"
 syn match gmNumber "\<0[bB][01]\+"
 
-" floating point number, with dot
-syn match gmFloat  "\<\d\+\.\d*[fF]\=\>"
-syn match gmFloat  "\.\d*[fF]\=\>"
-syn match gmFloat  "\<\d\+\.\d*[eE][-+]\d\+\>"
+" float number, starting with a dot, optional exponent and literal
+syn match gmFloat  "\<\d\+\."
+syn match gmFloat  "\.\d\+\([eE][-+]\=\d\+\)\=[fF]\=\>"
+" float number, with a dot, optional exponent and literal
+syn match gmFloat  "\<\d\+\.\d*\([eE][-+]\=\d\+\)\=[fF]\=\>"
+" float number, no dot, with exponent
+syn match gmFloat  "\<\d\+[eE][-+]\=\d\+\>"
 
 " functions
 syn keyword gmFunction function
