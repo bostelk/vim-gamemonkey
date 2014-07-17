@@ -29,7 +29,9 @@ syn region gmString  start=+`+ end=+`+ skip=+\\\\\|\\"+ contains=@Spell,gmSpecia
 
 " integer number
 syn match gmNumber "\<\d\+\>"
+" hex number
 syn match gmNumber "\<0[xX]\x\+"
+" binary number
 syn match gmNumber "\<0[bB][01]\+"
 
 " float number, starting with a dot, optional exponent and literal
