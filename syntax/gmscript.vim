@@ -21,11 +21,17 @@ syn keyword gmTodo TODO FIXME XXX NOTE contained
 syn match gmComment "//.*$" contains=gmTodo,@Spell
 syn region gmComment start="/\*" end="\*/" contains=gmTodo,@Spell
 
-" strings
-syn match  gmSpecial contained "\\[\\abfnrtv\'\"]\|\\\d\{,3}"
-syn region gmString  start=+'+ end=+'+ skip=+\\\\\|\\'+ contains=gmSpecial,@Spell
-syn region gmString  start=+"+ end=+"+ skip=+\\\\\|\\"+ contains=gmSpecial,@Spell
-syn region gmString  start=+`+ end=+`+ skip=+\\\\\|\\"+ contains=gmSpecial,@Spell
+" strings, with double quotes
+syn match  gmSpecialError contained "\\."
+syn match  gmSpecial contained +\\[\\abfnrtv'"]+
+syn region gmString  start=+"+ end=+"+ contains=gmSpecial,gmSpecialError,@Spell
+
+" strings, with backdashes
+syn match  gmSpecialOther contained +``+
+syn region gmStringOther  start=+`+ end=+`+ contains=gmSpecialOther,@Spell
+
+" characters
+syn region gmCharacter  start=+'+ end=+'+ contains=@Spell
 
 " integer number
 syn match gmNumber "\<\d\+\>"
@@ -97,7 +103,10 @@ hi def link gmConstant		Constant
 hi def link gmIdentifier	Identifier
 hi def link gmTodo			Todo
 hi def link gmComment		Comment
+hi def link gmSpecialError  Error
 hi def link gmString		String
+hi def link gmStringOther	String
+hi def link gmCharacter		Character
 hi def link gmNumber		Number
 hi def link gmFloat			Float
 hi def link gmFunction		Function
